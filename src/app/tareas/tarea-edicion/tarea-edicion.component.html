@@ -1,0 +1,22 @@
+<h2>Editar Tarea</h2>
+<div class="form-container">
+    <form [formGroup]="editarTareaForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="descripcionTarea">Tarea:</label>
+        <input id="descripcionTarea" formControlName="descripcionTarea" required/>
+    </div>
+    <div class="form-group">
+        <label for="nombreColaborador">Colaborador:</label>
+        <input id="nombreColaborador" formControlName="nombreColaborador" required/>
+    </div>
+    <div class="form-group">
+        <label for="fechaHoraInicio">Fec. Inicio:</label>
+        <input id="fechaHoraInicio" formControlName="fechaHoraInicio" required/>
+    </div>
+    <div class="form-group">
+        <label for="fechaHoraFin">Fec. Fin:</label>
+        <input id="fechaHoraFin" formControlName="fechaHoraFin" required/>
+    </div>
+    <button type="submit">Editar Tarea</button>
+    </form>
+</div>

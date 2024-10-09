@@ -1,0 +1,48 @@
+<div>
+    <h2>Lista de Tareas</h2>
+    <div>
+        <button (click)="mostrarNuevaTarea()">Agregar Tarea</button> 
+    </div>
+    <table mat-table [dataSource]="listaTareas" class="mat-elevation-z8">
+
+        <!-- Definir las columnas -->
+        <ng-container matColumnDef="descripcionTarea">
+          <th mat-header-cell *matHeaderCellDef> Tarea </th>
+          <td mat-cell *matCellDef="let element"> {{element.descripcionTarea}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="nombreColaborador">
+          <th mat-header-cell *matHeaderCellDef> Colaborador </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombreColaborador}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="fechaHoraInicio">
+          <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaHoraInicio}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="fechaHoraFin">
+          <th mat-header-cell *matHeaderCellDef> Fecha Fin </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaHoraFin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let tarea">
+                <button (click)="mostrarEditarTarea(tarea)">Editar</button> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="eliminar">
+            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+            <td mat-cell *matCellDef="let tarea">
+                <button (click)="eliminarTarea(tarea.idTarea)">Eliminar</button> 
+            </td>
+        </ng-container>
+      
+        <!-- Encabezado de la tabla -->
+        <tr mat-header-row *matHeaderRowDef="columnasTabTareas"></tr>
+        <!-- Filas de la tabla -->
+        <tr mat-row *matRowDef="let row; columns: columnasTabTareas;"></tr>
+      </table>
+  </div>

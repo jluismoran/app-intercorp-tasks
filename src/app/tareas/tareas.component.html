@@ -1,0 +1,3 @@
+<app-tarea-nueva *ngIf="!tareasService.tareaEditar.value" [hidden]="tareasService.ocultarNuevaTarea.value"></app-tarea-nueva>
+<app-tarea-edicion *ngIf="tareasService.tareaEditar.value" [hidden]="tareasService.ocultarEdicion.value"></app-tarea-edicion>
+<app-tareas-lista></app-tareas-lista>
