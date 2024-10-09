@@ -3,7 +3,6 @@
 
 # Directorios de construcción
 /dist/
-.angular/cache/
 
 # Archivos de configuración de IDE
 .idea/
